@@ -13,7 +13,7 @@ export class HttpService {
   ) {}
 
     getGithubNames(){
-      return this.http.get()
+      return this.http.get('https://api.github.com/users/daneden?access_token=+f9688f62bffff9402e4311a7e0a8807c30c8a837')
     }
    
 }

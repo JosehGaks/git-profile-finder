@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  names:object;
+
+  constructor(private _http: HttpService) { }
 
   ngOnInit() {
+    this._http.getGithubNames().subscribe(data =>{
+      this.names = data
+      console.log(this.names)
+    })
   }
 
 }
