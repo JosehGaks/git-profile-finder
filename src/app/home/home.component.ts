@@ -9,7 +9,7 @@ import { HttpService } from '../http.service';
 export class HomeComponent implements OnInit {
   profile:object;
   repos: object;
-  username:string;
+  username:string='josehGaks';
 
   constructor(private _http: HttpService) { }
   findProfile(){
