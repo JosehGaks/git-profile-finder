@@ -16,35 +16,82 @@
               </div>
            </div>
  
- 
- <div *ngIf="profile">
-<div class="fond"> <span class="s1"><i class="fab fa-github-alt"></i></span><span class="s2"><i class="fab fa-github-alt"></i></span></div>
-<div class="card">
-  <div class="thumbnail"><img class="left" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg"/></div>
-  <div class="right">
-    <h1>Why you Need More Magnesium in Your Daily Diet</h1>
-    <div class="author"><img src="{{profile.avatar_url}}"/>
-      <h2> </h2>
-    </div>
-    <div class="separator"></div>
-    <h3>Repos</h3>
-    <div class="panel-body" *ngFor="let repo of repos">
-        <p class="clearfix">
-          {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
-        </p>
-        <p>{{repo.description}}</p>
-      </div>  
-    </div>
-  <h5>{{profile.name}}</h5>
-  <h6><small>({{profile.login}})</small> </h6>
-  <ul>
-     <li><span class="label label-default">{{profile.followers}} Followers</span></li> 
-      <li><span class="label label-primary">Following {{profile.following}}</span></li>
-      <li><span class="label label-success">{{profile.public_gists}} Public gists</span></li>
-      <li><span class="label label-info">{{profile.public_repos}} Public Repos</span></li>
-  </ul>
-  <div class="fab"><i class="fa fa-arrow-down fa-3x"> </i></div>
-</div>
-</div>
+           <div *ngIf="profile">
+
+           <div class="movie-card">
+  
+              <div class="container">
+                
+                <a href="#"><img src="{{profile.avatar_url}}" alt="cover" class="cover" /></a>
+                    
+                <div class="hero">
+                        
+                  <div class="details">
+                  
+                    <div class="title1">{{profile.name}} <span><small>({{profile.login}})</small>
+                    </span></div>
+            
+                    <div class="title2" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></div>    
+                    
+                    <fieldset class="rating">
+                        <ul>
+                            <li><span class="label label-default">{{profile.followers}} Followers</span></li> 
+                             <li><span class="label label-primary">{{profile.following}} Following </span></li>
+                             <li><span class="label label-success">{{profile.public_gists}} Public gists</span></li>
+                             <li><span class="label label-info">{{profile.public_repos}} Public Repos</span></li>
+                         </ul>
+              </fieldset>
+                    
+                    <span class="likes">109 likes</span>
+                    
+                  </div> <!-- end details -->
+                  
+                </div> <!-- end hero -->
+                
+                <div class="description">
+                  
+                  <div class="column1">
+                    <span class="tag"><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a></span>
+
+                  </div> <!-- end column1 -->
+                  
+                  <div class="column2">
+                    
+                      <div class="separator"></div>
+                      <h3>Repos</h3>
+                      <div class="panel-body" *ngFor="let repo of repos">
+                          <p class="clearfix">
+                            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
+                          </p>
+                          <p>{{repo.description}}</p>
+                        </div>  
+                                  
+                    <div class="avatars">
+                      <a href="#" data-tooltip="Person 1" data-placement="top">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
+                      </a>
+                      
+                      <a href="#" data-tooltip="Person 2" data-placement="top">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar2.png" alt="avatar2" />
+                      </a>
+                      
+                      
+                      <a href="#" data-tooltip="Person 3" data-placement="top">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
+                      </a>
+                      
+                    </div> <!-- end avatars -->
+                    
+                    
+                    
+                  </div> <!-- end column2 -->
+                </div> <!-- end description -->
+                
+               
+              </div> <!-- end container -->
+            </div> <!-- end movie-card -->   
+          </div>       
+
+
 
      
