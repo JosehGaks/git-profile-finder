@@ -10,88 +10,57 @@
         </form>
               
       
-                 
+<div *ngIf="profile">
+        <sectio>
+            <h1>REPOS</h1>
+            <div class="content">
+                <div class="panel-body" *ngFor="let repo of repos">
+                    <p class="clearfix">
+                      {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
+                    </p>
+                    <p>{{repo.description}}</p>
+                  </div>
+            </div>
+            <div class="img">
 
-
+        <div class="container">
+            <div class="app">
+              <div class="app-buttons" :class="buttonsAnimate">
+                <div class="button button--facebook"></div>
+                <div class="button button--twitter"></div>
+                <div class="button button--instagram"></div>
               </div>
-           </div>
- 
-           <div *ngIf="profile">
+              <div class="app-content" @click="clickCard = !clickCard, buttonAnimate = !buttonAnimate" :class="cardAnimate">
+                <div class="app-photo"></div>
+                <div class="app-title">
+                  <div>{{profile.name}}</div>
+                  <div>{{profile.email}}</div>
+                </div>
+                <div class="app-bottom">
+                  <div class="app__block">
+                    <h3>Followers</h3>
+                    <p>{{profile.followers}}</p>
+                  </div>
+                  <div class="app__block">
+                    <h3>Following</h3>
+                    <p>{{profile.following}}</p>
+                  </div>
+                  <div class="app__block">
+                    <h3>Public gists</h3>
+                    <p>{{profile.public_gists}}</p>
+                  </div>
+                  <div class="app__block">
+                    <h3>Public Repos</h3>
+                    <p>{{profile.public_repos}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+          
+            </div>
+          </section>
 
-           <div class="movie-card">
-  
-              <div class="container">
-                
-                <a href="#"><img src="{{profile.avatar_url}}" alt="cover" class="cover" /></a>
-                    
-                <div class="hero">
-                        
-                  <div class="details">
-                  
-                    <div class="title1">{{profile.name}} <span><small>({{profile.login}})</small>
-                    </span></div>
-            
-                    <div class="title2" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></div>    
-                    
-                    <fieldset class="rating">
-                        <ul>
-                            <li><span class="label label-default">{{profile.followers}} Followers</span></li> 
-                             <li><span class="label label-primary">{{profile.following}} Following </span></li>
-                             <li><span class="label label-success">{{profile.public_gists}} Public gists</span></li>
-                             <li><span class="label label-info">{{profile.public_repos}} Public Repos</span></li>
-                         </ul>
-              </fieldset>
-                    
-                    <span class="likes">109 likes</span>
-                    
-                  </div> <!-- end details -->
-                  
-                </div> <!-- end hero -->
-                
-                <div class="description">
-                  
-                  <div class="column1">
-                    <span class="tag"><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-sm">View profile on github</a></span>
+        </div>
 
-                  </div> <!-- end column1 -->
-                  
-                  <div class="column2">
-                    
-                      <div class="separator"></div>
-                      <h3>Repos</h3>
-                      <div class="panel-body" *ngFor="let repo of repos">
-                          <p class="clearfix">
-                            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project on github</a>
-                          </p>
-                          <p>{{repo.description}}</p>
-                        </div>  
-                                  
-                    <div class="avatars">
-                      <a href="#" data-tooltip="Person 1" data-placement="top">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
-                      </a>
-                      
-                      <a href="#" data-tooltip="Person 2" data-placement="top">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar2.png" alt="avatar2" />
-                      </a>
-                      
-                      
-                      <a href="#" data-tooltip="Person 3" data-placement="top">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar3.png" alt="avatar3" />
-                      </a>
-                      
-                    </div> <!-- end avatars -->
-                    
-                    
-                    
-                  </div> <!-- end column2 -->
-                </div> <!-- end description -->
-                
-               
-              </div> <!-- end container -->
-            </div> <!-- end movie-card -->   
-          </div>       
-
-
-
-     
+         
