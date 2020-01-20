@@ -7,8 +7,8 @@ import { HttpService } from '../http.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  profile:any[];
-  repos: any[];
+  profile:object;
+  repos: object;
   username:string;
 
   constructor(private _http: HttpService) { }
