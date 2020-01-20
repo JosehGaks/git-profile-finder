@@ -4,14 +4,24 @@
       <nav>
         <ul>
           
-          <li><div class="wrap">
-              <div class="search">
-                 <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                 <button type="submit" class="searchButton" (click)="searchFor()">
-                   <i class="fa fa-search"></i>
-                </button>
+          <li>
+            <div class="wrap">
+                <div class="search">
+
+      <form action="" class="search-form">
+          <div class="form-group">
+            <input type="text" class="searchTerm form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+            <button type="submit" class="searchButton" (click)="findProfile()"><i class="fa fa-search"></i></button>
+          </div>
+        </form>
+              
+      
+                 
+
+
               </div>
-           </div></li>
+           </div>
+          </li>
            <li><a href="#" routerLink="/">Home</a></li>
         </ul>
       </nav>
