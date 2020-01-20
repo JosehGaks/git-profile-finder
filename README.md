@@ -5,10 +5,11 @@ Joseph Gakunga
 This project uses a seacrch bar that accepts github usernames.The github api in the programme takes the username and returns the username github account.
 
 ## Technologies used
--Angular
--HTML
--CSS
--Typescript
+
+ -Angular
+ -HTML
+ -CSS
+ -Typescript
 
 # codebeat
 [![codebeat badge](https://codebeat.co/badges/1abf200f-fad8-4725-9059-ef0535fea6f1)](https://codebeat.co/projects/github-com-josehgaks-git-profile-finder-master)
