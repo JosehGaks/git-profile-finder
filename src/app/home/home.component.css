@@ -8,3 +8,6 @@
 body{
   background: black;
 }
+label{
+  padding-bottom: 1em;
+}
